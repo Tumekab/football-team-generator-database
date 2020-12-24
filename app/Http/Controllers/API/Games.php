@@ -14,9 +14,10 @@ class Games extends Controller
     {
         return GameResource::collection(Game::all()->sortBy('game_date')); 
         //added in sortBy to have the dates sorted in order
+        
     }
 
-    public function store(GameRequest $request) //add new teams
+    public function store(GameRequest $request) //add a new game
     {
         $data = $request->all(); //will accept incoming data
         $game = Game::create($data); //make the model and save the model into database
@@ -35,7 +36,7 @@ class Games extends Controller
         return new GameResource($game);//request the get
     }
 
-    public function destroy(Game $game) //delete a set of teams
+    public function destroy(Game $game) //delete a game
     {
         $game->delete();
         return response('', 204);
