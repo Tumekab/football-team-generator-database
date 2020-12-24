@@ -12,11 +12,8 @@ class Games extends Controller
 {
     public function index() //show all games
     {
-
-        $games = Game::all()->sortBy('game_date');
-        return GameResource::collection($games);
-        
-        // return GameResource::collection(Game::all()->sortBy('game_date')); 
+        return GameResource::collection(Game::all()->sortBy('game_date')); 
+        //added in sortBy to have the dates sorted in order
     }
 
     public function store(GameRequest $request) //add new teams
