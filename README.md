@@ -1,62 +1,46 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<h1> API for It's Coming Home - Football Team Generator App</h1>
+<p>This API was created to co-inside with the technical challenge set by DevelopMe_ bootcamp. This API provides requests for a React Redux front-end which can be viewed here:
+The GitHub repository for the front-end project is found here: https://github.com/Tumekab/football-team-generator </p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<p>The API was created using Laravel with a Homestead database. The API was deployed using Heroku and can be found here: https://football-team-database.herokuapp.com/. </p>
 
-## About Laravel
+<h2>API Setup</h2>
+<p>The API consists of one table. This table is used to track each game when a user wishes to save their details once the teams have been generated. This then serves as a history on the app that can be viewed by the user. <br>
+Details of the API requests are below.</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<h2>Requests</h2>
+<p>All requests should use the basename: <code>https://football-team-database.herokuapp.com/</code>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<h3> Standard response for Games</h3>
+<code><strong> GET /api/games </strong></code>
+<p>Will return a list of all the games saved</p>
+<br>
+<code><strong> GET /api/games/{id}</strong></code>
+<p>Will returns a specific game with the given id</p>
+<br>
+<code><strong> POST /api/games </strong></code>
+<p>This will create a new game in the database</p>
+<strong>Requests</strong>
+<ul>
+    <li>game_date: date (YYYY/MM/DD)</li>
+    <li>team_one: string, max 50 characters</li>
+    <li>team_two: string, max 50 characters</li>
+    <li>winning_team: string, max 50 characters</li>
+</ul>
+<br>
+<code><strong> PUT /api/games/{id} </strong></code>
+<p>Will update an existing game with the given id</p>
+<strong>Requests</strong>
+<ul>
+    <li>game_date: date (YYYY/MM/DD)</li>
+    <li>team_one: string, max 50 characters</li>
+    <li>team_two: string, max 50 characters</li>
+    <li>winning_team: string, max 50 characters</li>
+</ul>
+<br>
+<code><strong> DELETE /api/games/{id} </strong></code>
+<p>Will delete a specific game with the given id</p>
+<br>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<h2>Foot-Note (not to be ignored)</h2>
+<em>Please note: ID numbers go up in 10. For example, the first game posted will have the id number of 1, then next game will have an id number of 11, next 21, next 31, and so on. This is a strange behaviour that I have not been able to understand why is happening. For now it is a quirk that will be fixed. </em>
