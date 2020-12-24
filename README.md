@@ -42,5 +42,21 @@ Details of the API requests are below.</p>
 <p>Will delete a specific game with the given id</p>
 <br>
 
+<h1>Cloning this Laravel API</h1>
+<p>When Cloning this repo please do the following;<p>
+    <ul>
+        <li>cd into the directory you wish to clone the project into</li>
+        <li>then run <code> git clone git@github.com:Tumekab/football-team-generator-database.git</code></li>
+        <li>once that has done then make an .env file</li>
+        <li>then run <code> composer install </code></li>
+        <li>then run <code> npm install </code> this will install all the dependencies</li>
+        <li>then run <code> composer require laravel/homestead </code> </li>
+        <li>then you will need to update your homestead.yaml file to descrease it's memory to 512 </li>
+        <li>then finally run <code> vendor/bin/homestead make </code> </li>
+    </ul>
+   <p>Once these steps have been taken you should now be able to run vagrant up and view the Laravel hosted api at homestead.test</p>
+    
+<br>
 <h2>Foot-Note (not to be ignored)</h2>
 <em>Please note: ID numbers go up in 10. For example, the first game posted will have the id number of 1, then next game will have an id number of 11, next 21, next 31, and so on. This is a strange behaviour that I have not been able to understand why is happening. For now it is a quirk that will be fixed. </em>
+            
