@@ -26,7 +26,7 @@ class Games extends Controller
 
     public function show(Game $game) //return a game
     {
-        return new GameResource ($game); 
+        return new GameResource($game); 
     }
 
     public function update(GameRequest $request, Game $game) //update a game
