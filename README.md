@@ -42,6 +42,15 @@ Details of the API requests are below.</p>
 <p>Will delete a specific game with the given id</p>
 <br>
 
+<h2>API Improvements</h2>
+<strong>Database</strong>
+<ul>
+    <li>Added team_one_score & team_two_score columns - to keep track of teams scores, which then comes through the GET request on the Match History Front-End table</li>
+    <li>Players Table where players were kept track of - this would entail a one to many relationship where players only belong to a set match</li>
+    <li>Team Name Generator table - where teams can randomly get selected a team name from the database</li>
+    <li>Player Generator Table - where teams can select a random player from the database to sub in if they are low on players</li>
+</ul>
+
 <h1>Cloning this Laravel API</h1>
 <p>When Cloning this repo please do the following;<p>
     <ul>
